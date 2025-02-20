@@ -1,57 +1,56 @@
-import { Link } from "react-router";
+import { Link } from "react-router"; // Import Link
 import { useState, useEffect } from "react";
 
 export default function Home() {
+    const images = [
+        "/assets/taniti/resort4.jpg",
+        "/assets/taniti/beachshop.jpg",
+        "/assets/taniti/resort1.jpg",
+        "/assets/taniti/volcano1.jpg",
+        "/assets/taniti/food3.jpg",
+        "/assets/taniti/city1.jpg",
+        "/assets/taniti/beach1.jpg",
+        "/assets/taniti/food2.jpg",
+        "/assets/taniti/pub.jpg",
+        "/assets/taniti/zipline.jpg",
+        "/assets/taniti/trail2.jpg",
+        "/assets/taniti/beach8.jpg",
+    ];
 
-  const images = [
-    "/assets/taniti/resort4.jpg",
-    "/assets/taniti/beachshop.jpg",
-    "/assets/taniti/resort1.jpg",
-    "/assets/taniti/volcano1.jpg",
-    "/assets/taniti/food3.jpg",
-    "/assets/taniti/city1.jpg",
-    "/assets/taniti/beach1.jpg",
-    "/assets/taniti/food2.jpg",
-    "/assets/taniti/pub.jpg",
-    "/assets/taniti/zipline.jpg",
-    "/assets/taniti/trail2.jpg",
-    "/assets/taniti/beach8.jpg",
-  ];
+    const [expandedSection, setExpandedSection] = useState<string | null>(null);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalImage, setModalImage] = useState<string | null>(null);
 
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState<string | null>(null);
+    useEffect(() => {
+        // Carousel logic
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) =>
+                prevIndex + 2 >= images.length ? 0 : prevIndex + 2
+            );
+        }, 3000); // Each image pair stays for 3 seconds
 
-  useEffect(() => {
-    // Carousel logic
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex + 2 >= images.length ? 0 : prevIndex + 2
-      );
-    }, 3000); 
+        // Smooth scrolling logic
+        const scrollToHash = () => {
+            if (typeof window !== "undefined" && window.location.hash) {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }, 100);
+                }
+            }
+        };
 
-    // Smooth scrolling logic
-    const scrollToHash = () => {
-      if (location.hash) {
-        const element = document.querySelector(location.hash);
-        if (element) {
-          setTimeout(() => {
-            element.scrollIntoView({ behavior: "smooth", block: "start" });
-          }, 100);
-        }
-      }
-    };
+        scrollToHash(); // Call on mount
 
-    scrollToHash(); 
+        window.addEventListener("hashchange", scrollToHash);
 
-    window.addEventListener("hashchange", scrollToHash);
-
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener("hashchange", scrollToHash);
-    };
-  }, [images.length, location]);
+        return () => {
+            clearInterval(interval);
+            window.removeEventListener("hashchange", scrollToHash);
+        };
+    }, [images.length]); // Remove `location` from dependencies
 
 
   const openModal = (image: string) => {

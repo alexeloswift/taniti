@@ -2,7 +2,6 @@ import { Link } from "react-router"; // Import Link
 import { useState, useEffect } from "react";
 
 export default function Taniti() {
-
     const images = [
         "/assets/taniti/resort4.jpg",
         "/assets/taniti/beachshop.jpg",
@@ -33,8 +32,8 @@ export default function Taniti() {
 
         // Smooth scrolling logic
         const scrollToHash = () => {
-            if (location.hash) {
-                const element = document.querySelector(location.hash);
+            if (typeof window !== "undefined" && window.location.hash) {
+                const element = document.querySelector(window.location.hash);
                 if (element) {
                     setTimeout(() => {
                         element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -51,7 +50,7 @@ export default function Taniti() {
             clearInterval(interval);
             window.removeEventListener("hashchange", scrollToHash);
         };
-    }, [images.length, location]);
+    }, [images.length]); // Remove `location` from dependencies
 
 
     interface Image {
