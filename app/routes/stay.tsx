@@ -344,55 +344,58 @@ export default function Stay() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="bg-gray-200 p-8 text-sm grid grid-cols-5 gap-4">
-                <ul>
-                    <li className="font-semibold">Home</li>
-                    <li>
-                        <Link to="/#exploreTaniti" className="text-blue-600 hover:underline">Explore Taniti</Link>
-                    </li>
-                    <li>
-                        <Link to="/#exploreTaniti" className="text-blue-600 hover:underline">Beautiful Stays</Link>
-                    </li>
-                    <li>
-                        <Link to="/#exploreTaniti" className="text-blue-600 hover:underline">FAQs</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li className="font-semibold">Stay</li>
-                    <li>
-                        <Link to="/stay#main" className="text-blue-600 hover:underline">Transportation</Link>
-                    </li>
-                    <li>
-                        <Link to="/stay#main" className="text-blue-600 hover:underline">Luxury Stays</Link>
-                    </li>
-                    <li>
-                        <Link to="/stay#main" className="text-blue-600 hover:underline">Local Cuisine</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li className="font-semibold">Taniti</li>
-                    <li>
-                        <Link to="/taniti#taniti" className="text-blue-600 hover:underline">A Map of Taniti</Link>
-                    </li>
-                    <li>
-                        <Link to="/taniti#taniti" className="text-blue-600 hover:underline">Sightseeing</Link>
-                    </li>
-                    <li>
-                        <Link to="/taniti#taniti" className="text-blue-600 hover:underline">Entertainment</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li className="font-semibold">
-                        <Link to="/contact" className="text-blue-600 hover:underline">Contact Us</Link>
-                    </li>
-                </ul>
-                <ul>
-                    <li className="font-semibold">
-                        <Link to="/faqs" className="text-blue-600 hover:underline">FAQs</Link>
-                    </li>
-                </ul>
-            </footer>
+ {/* Footer */}
+ <div>
+      <footer className="bg-gray-200 p-8 text-sm grid grid-cols-5 gap-4">
+        <ul>
+          <li className="font-semibold">Home</li>
+          <li>
+            <Link to="/#exploreTaniti" className="text-blue-600 hover:underline">Explore Taniti</Link>
+          </li>
+          <li>
+            <Link to="/#exploreTaniti" className="text-blue-600 hover:underline">Beautiful Stays</Link>
+          </li>
+          <li>
+            <Link to="/#exploreTaniti" className="text-blue-600 hover:underline">FAQs</Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="font-semibold">Stay</li>
+          <li>
+            <Link to="/stay#main" className="text-blue-600 hover:underline">Transportation</Link>
+          </li>
+          <li>
+            <Link to="/stay#main" className="text-blue-600 hover:underline">Luxury Stays</Link>
+          </li>
+          <li>
+            <Link to="/stay#main" className="text-blue-600 hover:underline">Local Cuisine</Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="font-semibold">Taniti</li>
+          <li>
+            <Link to="/taniti#taniti" className="text-blue-600 hover:underline">A Map of Taniti</Link>
+          </li>
+          <li>
+            <Link to="/taniti#taniti" className="text-blue-600 hover:underline">Sightseeing</Link>
+          </li>
+          <li>
+            <Link to="/taniti#taniti" className="text-blue-600 hover:underline">Entertainment</Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="font-semibold">
+            <Link to="/contact" className="text-blue-600 hover:underline">Contact Us</Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="font-semibold">
+            <Link to="/faqs" className="text-blue-600 hover:underline">FAQs</Link>
+          </li>
+        </ul>
+      </footer>
+      <p className="font-light text-sm text-center"> Unsplash. (n.d.). Home [Photographs]. Unsplash. https://unsplash.com </p>
+      </div>
         </div >
     );
 }

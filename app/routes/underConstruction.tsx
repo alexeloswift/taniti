@@ -37,7 +37,8 @@ export default function UnderConstruction() {
           </div>
         </div>
       </div>
-      {/* Footer */}
+ {/* Footer */}
+ <div>
       <footer className="bg-gray-200 p-8 text-sm grid grid-cols-5 gap-4">
         <ul>
           <li className="font-semibold">Home</li>
@@ -79,15 +80,15 @@ export default function UnderConstruction() {
           <li className="font-semibold">
             <Link to="/contact" className="text-blue-600 hover:underline">Contact Us</Link>
           </li>
-
         </ul>
         <ul>
           <li className="font-semibold">
             <Link to="/faqs" className="text-blue-600 hover:underline">FAQs</Link>
           </li>
-
         </ul>
       </footer>
+      <p className="font-light text-sm text-center"> Unsplash. (n.d.). Home [Photographs]. Unsplash. https://unsplash.com </p>
+      </div>
     </div>
   );
 }

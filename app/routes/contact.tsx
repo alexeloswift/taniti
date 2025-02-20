@@ -29,7 +29,8 @@ export default function ContactForm() {
         </div>
       </div>
 
-      {/* Footer */}
+ {/* Footer */}
+ <div>
       <footer className="bg-gray-200 p-8 text-sm grid grid-cols-5 gap-4">
         <ul>
           <li className="font-semibold">Home</li>
@@ -78,6 +79,8 @@ export default function ContactForm() {
           </li>
         </ul>
       </footer>
+      <p className="font-light text-sm text-center"> Unsplash. (n.d.). Home [Photographs]. Unsplash. https://unsplash.com </p>
+      </div>
     </div>
   );
 }
